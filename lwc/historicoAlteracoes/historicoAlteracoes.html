@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Histórico de Alterações e Transações" variant="narrow">
+        <div class="slds-m-around_medium">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr>
+                <th class="slds-text-align_center">Nome</th>
+                <th class="slds-text-align_center">Tipo</th>               
+                <th class="slds-text-align_center">Valor </th>  
+                <th class="slds-text-align_center">Nome da Conta Bancária</th>
+                <th class="slds-text-align_center">Saldo Atual</th>
+                <th class="slds-text-align_center">Saldo Anterior</th>
+                
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={historicoAlteracoes} for:item="item">
+                <tr key={item.Id}>
+                    <td class="slds-text-align_center">{item.Name}</td>
+                    <td class="slds-text-align_center">{item.Tipo__c}</td>                  
+                    <td class="slds-text-align_center">{item.Valor_para_transferencia__c}</td>                 
+                    <td class="slds-text-align_center">{item.Nome_Conta_Bancaria__c}</td>                    
+                    <td class="slds-text-align_left" >{item.Saldo_Atual__c}</td>
+                    <td class="slds-text-align_left" >{item.Saldo_Anterior__c}</td>
+                    <td class="slds-text-align_center">{item.Data__c}</td>
+                </tr>
+            </template>          
+            
+        </tbody>
+    </table>
+</div>
+</lightning-card>
+</template>
